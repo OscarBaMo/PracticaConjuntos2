@@ -1,0 +1,80 @@
+﻿import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        int inicio = 0;
+
+
+        SortedSet<Integer> ConjuntoA = new TreeSet<>();
+        SortedSet<Integer> ConjuntoB = new TreeSet<>();
+        SortedSet<Integer> ConjuntoC = new TreeSet<>();
+
+
+        inicio = 0;
+        while (inicio < 1000) {
+            inicio++;
+            ConjuntoA.add(inicio);
+
+
+            if (inicio % 3 == 0) {
+                ConjuntoB.add(inicio);
+            }
+
+
+            if (inicio % 5 == 0) {
+                ConjuntoC.add(inicio);
+            }
+
+
+        }
+
+
+        Iterator valoresConjuntoA = ConjuntoA.iterator();
+        System.out.println("Los valores del Conjunto A son: ");
+        while (valoresConjuntoA.hasNext()) {
+            System.out.println(valoresConjuntoA.next());
+        }
+        Iterator valoresConjuntoB = ConjuntoB.iterator();
+        System.out.println("Los valores del Conjunto B son: ");
+        while (valoresConjuntoB.hasNext()) {
+                System.out.println(valoresConjuntoB.next());
+
+
+        }
+        Iterator valoresConjuntoC = ConjuntoC.iterator();
+        System.out.println("Los valores del Conjunto C son: ");
+        while (valoresConjuntoC.hasNext()) {
+            System.out.println(valoresConjuntoC.next());
+
+
+        }
+        int tamañoA = ConjuntoA.size();
+        int tamañoB = ConjuntoB.size();
+        int tamañoC = ConjuntoC.size();
+
+
+        System.out.println("El Conjunto A tiene un tamaño de = " + tamañoA);
+        System.out.println("El Conjunto B tiene un tamaño de = " + tamañoB);
+        System.out.println("El Conjunto C tiene un tamaño de = " + tamañoC);
+
+
+
+
+        ConjuntoB.addAll(ConjuntoC);
+        System.out.println("B U C contiene: " + ConjuntoB);
+        System.out.println("B U C el tamaño es: " + ConjuntoB.size());
+
+
+
+
+
+
+    }
+
+
+}
